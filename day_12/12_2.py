@@ -76,7 +76,7 @@ def find_cost(grid):
                         elif 0 <= nx < cols and 0 <= ny < lines:
                             if grid[nx][ny] != key:
                                 directions.append(get_direction(dx, dy))  
-                                                      
+
                     for direction in directions:
                         if (x, y) not in external_blocks[direction]:
                             external_blocks[direction].append((x, y))
@@ -94,6 +94,4 @@ file = 'input.txt'
 
 with open(file, 'r') as file:
     grid = [list(line.strip()) for line in file.readlines()]
-
-
 print("Result: ", find_cost(grid))
